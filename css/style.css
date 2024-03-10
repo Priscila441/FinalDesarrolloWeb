@@ -58,7 +58,7 @@ header nav div ul li .a-nav:first-child .letras-anchas {
 /* Media query para pantalla de celular*/
 @media only screen and (max-width: 576px) {
   .navbar-brand img {
-    content: url("/imagenes/logoPequeño1.png"); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
+    content: url("../../imagenes/logoPequeño1.png"); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
     height: 60px; /* Ajusta el tamaño del logo para pantallas de celular */
   }
   header {

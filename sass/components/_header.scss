@@ -56,7 +56,7 @@ header {
 
     .navbar-brand {
         img {
-            content: url('/imagenes/logoPequeño1.png'); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
+            content: url('../../imagenes/logoPequeño1.png'); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
             height: 60px; /* Ajusta el tamaño del logo para pantallas de celular */
         }
     }
