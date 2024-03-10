@@ -57,9 +57,8 @@ header nav div ul li .a-nav:first-child .letras-anchas {
 /* Medias Query*/
 /* Media query para pantalla de celular*/
 @media only screen and (max-width: 576px) {
-  .navbar-brand img {
-    content: url("../../imagenes/logoPequeño1.png"); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
-    height: 60px; /* Ajusta el tamaño del logo para pantallas de celular */
+  .img-desktop {
+    display: none;
   }
   header {
     width: 100%;
@@ -74,11 +73,19 @@ header nav div ul li .a-nav:first-child .letras-anchas {
 }
 /* Media query para pantalla de tablet */
 @media only screen and (min-width: 577px) and (max-width: 992px) {
+  .img-desktop {
+    display: none;
+  }
   .navbar-toggler {
     display: block; /* Mostrar el botón de la hamburguesa en tamaños de pantalla de tablet */
   }
   header {
     padding-right: 6px;
+  }
+}
+@media only screen and (min-width: 981px) {
+  #img-mobile {
+    display: none;
   }
 }
 /* Home Main */
