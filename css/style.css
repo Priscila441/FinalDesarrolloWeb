@@ -1,0 +1,370 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+} /* Grid*/
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 70px 3fr 3fr 70px;
+  grid-template-areas: "header header header" "main main main" "main main main" "footer footer footer";
+}
+
+footer, main .secciones, header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Header con bootstrap */
+header {
+  grid-area: header;
+  font-family: "Open Sans", sans-serif;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9;
+  background-color: #ffffff;
+  border-bottom: 1px solid #d3d3d3;
+}
+header .container {
+  margin-left: 0px;
+}
+header .contenedor-logo {
+  justify-content: flex-start;
+}
+header .contenedor-nav {
+  display: flex;
+}
+header nav div .navbar-brand img {
+  height: 60px;
+}
+header nav div ul li {
+  display: inline;
+  margin-right: 20px;
+}
+header nav div ul li .a-nav {
+  color: black;
+}
+header nav div ul li .a-nav:first-child .letras-anchas {
+  text-decoration: none;
+  font-weight: bold;
+  color: #c08e47;
+}
+
+/* Medias Query*/
+/* Media query para pantalla de celular*/
+@media only screen and (max-width: 576px) {
+  .navbar-brand img {
+    content: url("/imagenes/logoPequeño1.png"); /* Cambiar la ruta de la imagen para el logo en tamaños de pantalla de celular */
+    height: 60px; /* Ajusta el tamaño del logo para pantallas de celular */
+  }
+  header {
+    width: 100%;
+    padding-right: 7px;
+  }
+  .container {
+    width: 100%;
+  }
+  .header-productos {
+    padding-right: 110px;
+  }
+}
+/* Media query para pantalla de tablet */
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+  .navbar-toggler {
+    display: block; /* Mostrar el botón de la hamburguesa en tamaños de pantalla de tablet */
+  }
+  header {
+    padding-right: 6px;
+  }
+}
+/* Home Main */
+main {
+  grid-area: main;
+  font-family: "Quicksand", sans-serif;
+  min-height: 88vh;
+  /* Animacion heartbeat
+  * ----------------------------------------*/
+  /*cartas del index */
+  /*Pagina Productos*/
+  /* Pagina contacto*/
+  /* Preguntas Frecuentes*/
+  /* Cambiar el color de fondo cuando la pregunta está seleccionada */
+  /* Pagina Nosotras*/
+  /* tablet */
+  /*Desktop*/
+}
+main .espaciado {
+  margin-bottom: 30px;
+  margin-top: 15px;
+}
+main .imgPrincipal {
+  height: 550px;
+  width: 100%;
+}
+main .imagenes-pequeñas {
+  height: 280px;
+  width: 400px;
+}
+main .secciones {
+  text-align: center;
+}
+main .parrafo {
+  text-align: center;
+  padding-left: 40px;
+  padding-right: 40px;
+  font-size: 17px;
+}
+main .titulo {
+  font-size: 30px;
+  color: #c08e47;
+  font-family: "Open Sans", sans-serif;
+}
+main .cartasEquipo {
+  padding: 0px 300px;
+}
+main .carousel-inner {
+  display: flex;
+}
+main .carousel-item {
+  flex: 0 0 auto;
+}
+main .card-img-top {
+  justify-content: center;
+  width: 70%;
+  height: 350px;
+  object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+}
+main .tamaño {
+  font-size: xx-large;
+}
+main .mi-boton {
+  background-color: #d1c1c7;
+  border-radius: 15px; /* Bordes redondos */
+  border: none; /*sin color el border*/
+  padding: 10px 20px; /* Espaciado interno del botón */
+  font-size: 25px; /* Tamaño de la fuente */
+  font-weight: bold; /* Letra ancha o negrita */
+  cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+  color: #ffffff;
+}
+main .mi-boton a {
+  text-decoration: none;
+  color: #ffffff;
+}
+main .mi-boton a:hover {
+  text-decoration: none; /* Quitar el subrayado */
+  color: black;
+}
+@keyframes heartbeat {
+  from {
+    transform: scale(1);
+    transform-origin: center center;
+    animation-timing-function: ease-out;
+  }
+  10% {
+    transform: scale(0.91);
+    animation-timing-function: ease-in;
+  }
+  17% {
+    transform: scale(0.98);
+    animation-timing-function: ease-out;
+  }
+  33% {
+    transform: scale(0.87);
+    animation-timing-function: ease-in;
+  }
+  45% {
+    transform: scale(1);
+    animation-timing-function: ease-out;
+  }
+}
+main .heartbeat {
+  animation: heartbeat 2s linear 2s infinite both;
+}
+main .heartbeat:hover {
+  color: black;
+}
+main .div1 {
+  display: flex;
+  justify-content: space-evenly;
+}
+main .div-cartas img:hover {
+  filter: brightness(80%);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añade una sombra al pasar el ratón */
+  transition: filter 0.3s ease; /* Agrega una transición suave */
+}
+main .img-productos {
+  height: 338px;
+  width: 400px;
+}
+main .img-productos .espaciado {
+  margin-bottom: 8px;
+  margin-top: 5px;
+}
+main .row {
+  margin-left: 4px;
+}
+main .flechas {
+  color: inherit;
+  text-decoration: none;
+  font-size: 30px;
+}
+main .flechas:hover {
+  color: inherit;
+}
+main .izquierda {
+  text-align: left;
+  margin: 40px;
+}
+main .carousel-item img:hover {
+  filter: brightness(105%);
+  transform: scale(1.1);
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Añade una sombra al pasar el ratón */
+  transition: filter 0.3s ease; /* Agrega una transición suave */
+}
+main .contenedor-iframe {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main #mi-iframe {
+  width: 300px;
+  height: 300px;
+  border: none;
+  transform: scale(1);
+  transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+}
+main .contenedor-iframe:hover #mi-iframe {
+  width: 80%;
+  height: 80%;
+  transform: scale(1);
+}
+main .accordion-button:focus {
+  background-color: #d1c1c7;
+}
+main .img-nosotras {
+  height: auto;
+  width: 40vw;
+}
+@media only screen and (max-width: 576px) {
+  main {
+    grid-area: main;
+    /*PAGINA NOSOTRAS*/
+    /*PAGINA PRODUCTOS*/
+    /*PAGINA CONTACTO*/
+  }
+  main .imgPrincipal {
+    height: 320px;
+    width: 100%;
+  }
+  main .secciones {
+    display: block;
+  }
+  main .img-productos {
+    height: 350px;
+    width: 100%;
+  }
+  main .izquierda {
+    margin: 15px;
+  }
+  main .mi-boton {
+    font-size: 17px;
+  }
+  main .img-nosotras {
+    width: 100%;
+  }
+  main .cartasEquipo {
+    padding: initial;
+  }
+  main #carouselExample {
+    display: none;
+  }
+  main #carouselExampleMobile {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+  }
+  main .flechas {
+    font-size: 20px;
+  }
+  main .parrafo {
+    font-size: x-large;
+  }
+  main .parrafo {
+    padding: 15px;
+  }
+}
+@media only screen and (min-width: 577px) and (max-width: 992px) {
+  main .parrafo {
+    padding: 0px;
+    margin: 15px;
+  }
+  main .imagenes-pequeñas {
+    width: 100%;
+  }
+  main #carouselExampleMobile {
+    display: none;
+  }
+  main .flechas {
+    font-size: 25px;
+  }
+}
+@media only screen and (min-width: 981px) {
+  main #carouselExampleMobile {
+    display: none;
+  }
+  main #espaciado-id {
+    margin-bottom: 30px;
+    margin-top: 15px;
+  }
+  main .video {
+    width: 70%;
+  }
+}
+
+.fondo {
+  background-color: #E4CAB5;
+}
+
+.img {
+  height: 25px;
+  padding-right: 10px;
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  background-color: #BA8B76;
+  padding-left: 20px;
+  padding-right: 20px;
+  font-family: "Quicksand", sans-serif;
+}
+footer .imgLogo {
+  height: 70px;
+  width: 70px;
+}
+footer .a-nav {
+  text-decoration: none;
+  color: black;
+}
+footer .a-nav:hover {
+  color: #ffffff;
+}
+@media only screen and (max-width: 576px) {
+  footer {
+    grid-area: footer;
+  }
+  footer .iconos-redes {
+    display: flex;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */

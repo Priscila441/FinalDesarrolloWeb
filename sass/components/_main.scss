@@ -1,0 +1,281 @@
+/* Home Main */
+main{
+    grid-area: main;
+    font-family: $font-principal;
+    min-height: 88vh;
+
+    .espaciado{
+        margin-bottom: 30px;
+        margin-top: 15px;
+    }
+    .imgPrincipal{
+        @include imagenes(550px,100%);
+    }
+    .imagenes-pequeñas{
+        @include imagenes(280px,400px);
+    }
+    .secciones{
+        @extend %display-flex;
+        text-align: center;
+    }
+    .parrafo{
+        text-align: center;
+        padding-left: 40px;
+        padding-right: 40px;
+        font-size: 17px;
+    }
+    .titulo{
+        font-size: 30px;
+        color:map-get($colores , second-color);
+        font-family: $font-titulos;
+    }
+
+    //Seccion Nosotros
+    .cartasEquipo{
+        padding: 0px 300px;
+    }
+    //carrusel de compañeros
+    .carousel-inner {
+        display: flex;
+      }
+      .carousel-item {
+        flex: 0 0 auto;
+      }
+      .card-img-top {
+      justify-content: center;
+      width: 70%;
+      height: 350px;
+      object-fit: cover; /* Ajusta la imagen sin distorsionarla */
+      }
+      .tamaño{
+        font-size: xx-large;
+    }
+
+    .mi-boton {
+        background-color: map-get($colores, boton-color);
+        border-radius: 15px; /* Bordes redondos */
+        border: none; /*sin color el border*/
+        padding: 10px 20px; /* Espaciado interno del botón */
+        font-size: 25px; /* Tamaño de la fuente */
+        font-weight: bold; /* Letra ancha o negrita */
+        cursor: pointer; /* Cambiar el cursor al pasar sobre el botón */
+        color: map-get($colores , first-color);
+        
+        a{
+            text-decoration: none;
+            color: map-get($colores ,first-color);
+
+            &:hover {
+                text-decoration: none; /* Quitar el subrayado */
+                color: map-get($colores ,third-color);
+            }
+        }
+    }
+     /* Animacion heartbeat
+     * ----------------------------------------*/
+     @keyframes heartbeat {
+        from {
+          transform: scale(1);
+          transform-origin: center center;
+          animation-timing-function: ease-out;
+        }10% {
+          transform: scale(0.91);
+          animation-timing-function: ease-in;
+        }
+        17% {
+          transform: scale(0.98);
+          animation-timing-function: ease-out;
+        }
+        33% {
+          transform: scale(0.87);
+          animation-timing-function: ease-in;
+        }
+        45% {
+          transform: scale(1);
+          animation-timing-function: ease-out;
+        }
+      }
+      .heartbeat {
+        animation: heartbeat 2s linear 2s infinite both;
+        &:hover{
+            color: map-get($colores ,third-color);
+        }
+    }
+    .div1{
+        display: flex;
+        justify-content: space-evenly;
+    }
+    
+    /*cartas del index */
+    .div-cartas {
+        img{
+            &:hover{
+                @include agrandar(80%);
+            }
+        }
+    }
+    
+    /*Pagina Productos*/
+    .img-productos{
+        @include imagenes(338px,400px);
+        .espaciado{
+            margin-bottom: 8px;
+            margin-top: 5px;
+        }
+    }
+    .row{
+        margin-left: 4px;
+    }
+    .flechas{
+        color: inherit;
+        text-decoration: none;
+        font-size: 30px;
+
+        &:hover{
+            color: inherit;
+        }
+    }
+
+    /* Pagina contacto*/
+    .izquierda{
+        text-align: left;
+        margin:40px;
+    } 
+    .carousel-item {
+        img{
+            &:hover {
+                @include agrandar(105%);
+            }
+        }
+    }
+    .contenedor-iframe {
+        position: relative;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      #mi-iframe {
+        width: 300px;
+        height: 300px;
+        border: none;
+        transform: scale(1);
+        transition: transform 0.5s ease, width 0.5s ease, height 0.5s ease;
+      }
+      
+      .contenedor-iframe:hover #mi-iframe {
+        width: 80%;
+        height: 80%;
+        transform: scale(1);
+      }
+      
+
+
+    /* Preguntas Frecuentes*/
+    /* Cambiar el color de fondo cuando la pregunta está seleccionada */
+    
+    .accordion-button:focus {
+        background-color: #d1c1c7;
+    }
+    
+
+    /* Pagina Nosotras*/
+    .img-nosotras{
+        @include imagenes(auto,40vw);
+    }
+
+
+    //mobile
+    @media only screen and (max-width: 576px) {
+        grid-area: main;
+        .imgPrincipal{
+            @include imagenes(320px,100%);
+        }
+        .secciones{
+            display: block;
+        }
+        .img-productos{
+            @include imagenes(350px,100%);
+        }
+        .izquierda{
+            margin:15px;
+        } 
+        .mi-boton{
+            font-size: 17px;
+        }
+
+        /*PAGINA NOSOTRAS*/
+        .img-nosotras{
+            width: 100%;
+        }
+        //carrusel de compañeros
+        .cartasEquipo{
+            padding: initial;
+        }
+
+
+
+        /*PAGINA PRODUCTOS*/
+        #carouselExample{
+            display:  none;
+        }
+        #carouselExampleMobile{
+            display: flex;
+            justify-content: space-between;
+            text-align: center;
+        }
+        .flechas{
+            font-size: 20px;
+        }
+        .parrafo{
+            font-size: x-large;
+        }
+        
+        /*PAGINA CONTACTO*/
+        .parrafo{
+            padding: 15px;
+        }
+    }
+
+    /* tablet */
+    @media only screen and (min-width: 577px) and (max-width: 992px) {
+        .parrafo{
+            padding: 0px;
+            margin: 15px;
+        }
+        .imagenes-pequeñas{
+            width: 100%;
+        }
+        #carouselExampleMobile{
+            display: none;
+        }
+        .flechas{
+            font-size: 25px;
+        }
+    }
+
+    /*Desktop*/
+    @media only screen and (min-width: 981px) {
+        #carouselExampleMobile{
+            display: none;
+        }
+        #espaciado-id{
+            margin-bottom: 30px;
+            margin-top: 15px;
+        }
+        .video{
+            width:70%;
+        }
+    }
+}
+
+.fondo{
+    background-color:map-get($colores ,fondo-color);
+}
+.img {
+    //en carrito de compras
+    height: 25px;
+    padding-right: 10px;
+}
